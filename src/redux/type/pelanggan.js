@@ -1,0 +1,2 @@
+export const GET_PELANGGAN = 'GET_PELANGGAN';
+export const ADD_PELANGGAN = 'ADD_PELANGGAN';
