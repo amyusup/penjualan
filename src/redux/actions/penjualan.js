@@ -36,6 +36,7 @@ export const getPenjualanByNota = (nota) => async (dispatch) => {
   };
   export const editPenjualan = (data) => async (dispatch) => {
     try {
+      dispatch({type: EDIT_PENJUALAN, payload: ''});
       const res = await axios.patch(`${URI}/penjualan`, data);
       dispatch({type: EDIT_PENJUALAN, payload: res.data.data});
       ToastAndroid.show(
@@ -48,7 +49,7 @@ export const getPenjualanByNota = (nota) => async (dispatch) => {
   };
   export const deletePenjualan = (nota) => async (dispatch) => {
     try {
-      const res = await axios.patch(`${URI}/penjualan/${nota}`);
+      const res = await axios.delete(`${URI}/penjualan/${nota}`);
       dispatch({type: DELETE_PENJUALAN, payload: res.data.data});
       ToastAndroid.show(
           `Data penjualan berhasil dihapus`,

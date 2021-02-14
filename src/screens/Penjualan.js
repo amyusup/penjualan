@@ -68,7 +68,7 @@ export default function Penjualan({navigation}) {
         <FlatList
           data={penjualan}
           renderItem={renderItem}
-          keyExtractor={(item, index) => index}
+          keyExtractor={(item, index) => index.toString()}
         />
       </ScrollView>
     </View>

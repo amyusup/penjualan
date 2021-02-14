@@ -32,7 +32,7 @@ export default function Pelanggan({navigation}) {
           <Text>{item.jenis_kelamin}</Text>
           <Text>{item.domisili}</Text>
         </View>
-        <View style={styles.action}>
+        {/* <View style={styles.action}>
           <TouchableOpacity>
             <Image source={Images.edit} style={{height: 25, width: 25}} />
           </TouchableOpacity>
@@ -42,7 +42,7 @@ export default function Pelanggan({navigation}) {
               style={{height: 25, width: 25, marginTop: 10}}
             />
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     );
   };
@@ -58,7 +58,7 @@ export default function Pelanggan({navigation}) {
       <FlatList
         data={pelanggan}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id_pelanggan.toString()}
+        keyExtractor={(item, index) => index.toString()}
       />
       </ScrollView>
       
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   data: {
     flex: 1,
     flexDirection: 'column',
-    marginHorizontal: 5,
+    marginHorizontal: 10,
     justifyContent: 'center',
   },
   action: {
